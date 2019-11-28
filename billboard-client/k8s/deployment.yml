@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: jvm
+  name: jvm
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      run: jvm
+  template:
+    metadata:
+      labels:
+        run: jvm
+    spec:
+      containers:
+      - image: asaikali/billboard-client
+        imagePullPolicy: Always
+        name: jvm
+        ports:
+          - containerPort: 8080
+        resources:
+          requests:
+            cpu: 2000m
+            memory: 1G
+          limits:
+            cpu: 2000m
+            memory: 1G

@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: message-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: message-service
+  template:
+    metadata:
+      labels:
+        app: message-service
+    spec:
+      containers:
+      - image: asaikali/message-service:latest
+        imagePullPolicy: Always
+        name: message-service
+        ports:
+          - containerPort: 8080
+        resources:
+          requests:
+            cpu: 1000m
+            memory: 1G
+          limits:
+            cpu: 1000m
+            memory: 1G
