@@ -21,6 +21,12 @@
     <spring-cloud.version>Hoxton.RC2</spring-cloud.version>
   </properties>
 
+  <modules>
+    <module>message-service</module>
+    <module>eureka-server</module>
+    <module>billboard-client</module>
+  </modules>
+
   <dependencyManagement>
     <dependencies>
       <dependency>
