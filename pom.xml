@@ -13,35 +13,13 @@
   <artifactId>spring-cloud-k8s</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>spring-cloud-k8s</name>
+  <packaging>pom</packaging>
   <description>Demo Project showing Spring cloud Integration with Kubernetes</description>
 
   <properties>
     <java.version>11</java.version>
     <spring-cloud.version>Hoxton.RC2</spring-cloud.version>
   </properties>
-
-  <dependencies>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-    </dependency>
-
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-test</artifactId>
-      <scope>test</scope>
-      <exclusions>
-        <exclusion>
-          <groupId>org.junit.vintage</groupId>
-          <artifactId>junit-vintage-engine</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-  </dependencies>
 
   <dependencyManagement>
     <dependencies>
@@ -54,15 +32,6 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-      </plugin>
-    </plugins>
-  </build>
 
   <repositories>
     <repository>
