@@ -1,3 +1,9 @@
+spring:
+  cloud:
+    kubernetes:
+      discovery:
+        enabled: false
+
 eureka:
   client:
     fetch-registry: true # We need to call other services so lets get fetch what's registered in eureka

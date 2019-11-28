@@ -1,3 +1,8 @@
+spring:
+  cloud:
+    kubernetes:
+      enabled: false
+
 # Set this service to start on a random port number that is not being
 # used, this will allow us to launch multiple versions of the service
 # and register them with Eureka for discovery
