@@ -1,8 +1,7 @@
 spring:
   cloud:
     kubernetes:
-      discovery:
-        enabled: false
+      enabled: false
 
 eureka:
   client:
