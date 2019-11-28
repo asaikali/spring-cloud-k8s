@@ -1,5 +1,6 @@
 package com.example.messageservice;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,8 @@ public class MessageController {
     public MessageController(QuoteRepository quoteRepository) {
         this.quoteRepository = quoteRepository;
     }
+
+
 
     @GetMapping("/")
     public Quote radomQuote()

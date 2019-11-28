@@ -1,3 +1,5 @@
+foo: "value from application.yml"
+
 spring:
   cloud:
     kubernetes:

@@ -12,6 +12,7 @@ spec:
       labels:
         app: message-service
     spec:
+      serviceAccountName: "spring-cloud"
       containers:
       - image: asaikali/message-service:latest
         imagePullPolicy: Always
