@@ -18,7 +18,7 @@
 
   <properties>
     <java.version>11</java.version>
-    <spring-cloud.version>Hoxton.RC2</spring-cloud.version>
+    <spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>
   </properties>
 
   <modules>
@@ -38,13 +38,4 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-
-  <repositories>
-    <repository>
-      <id>spring-milestones</id>
-      <name>Spring Milestones</name>
-      <url>https://repo.spring.io/milestone</url>
-    </repository>
-  </repositories>
-
 </project>

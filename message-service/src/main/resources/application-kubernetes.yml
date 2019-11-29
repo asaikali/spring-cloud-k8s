@@ -10,4 +10,4 @@ spring:
     kubernetes:
       reload:
         enabled: true
-        strategy: refresh
+        strategy: restart_context

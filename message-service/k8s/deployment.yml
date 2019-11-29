@@ -26,3 +26,18 @@ spec:
           limits:
             cpu: 1000m
             memory: 1G
+        livenessProbe:
+          initialDelaySeconds: 15
+          periodSeconds: 5
+          httpGet:
+            port: 8080
+            path: /alive
+        readinessProbe:
+          initialDelaySeconds: 5
+          periodSeconds: 5
+          httpGet:
+            port: 8080
+            path: /actuator/health
+
+
+
