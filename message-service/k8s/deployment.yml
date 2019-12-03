@@ -19,6 +19,9 @@ spec:
         name: message-service
         ports:
           - containerPort: 8080
+        env:
+          - name: "JAVA_OPTS"
+            value: "-XshowSettings:vm -XX:MaxRAMPercentage=75.0"
         resources:
           requests:
             cpu: 1000m

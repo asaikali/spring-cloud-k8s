@@ -21,4 +21,9 @@ VOLUME /tmp
 WORKDIR /app
 EXPOSE 8080
 USER nobody:nobody
-ENTRYPOINT ["java","-XshowSettings:vm","-XX:MaxRAMPercentage=75.0","-cp","/app:/app/lib/*","com.example.messageservice.MessageServiceApplication"]
+
+# use shell from of entry point and expect k8s manifest to set the JAVA_OPTS env var
+ENTRYPOINT java $JAVA_OPTS -cp /app:/app/lib/* com.example.messageservice.MessageServiceApplication
+
+# exec from of entry point below can not do variable subsittion
+# ENTRYPOINT ["java","-XshowSettings:vm","-XX:MaxRAMPercentage=75.0","-cp","/app:/app/lib/*","com.example.messageservice.MessageServiceApplication"]
