@@ -27,7 +27,7 @@ spec:
             cpu: 1000m
             memory: 1G
         livenessProbe:
-          initialDelaySeconds: 15
+          initialDelaySeconds: 10
           periodSeconds: 5
           httpGet:
             port: 8080

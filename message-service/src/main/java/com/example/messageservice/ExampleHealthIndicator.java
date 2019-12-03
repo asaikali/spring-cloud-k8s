@@ -13,7 +13,7 @@ public class ExampleHealthIndicator implements HealthIndicator
 
     @Override
     public Health health() {
-        System.out.println("ExampleHealthIndicator called at " + LocalDateTime.now() + " state=" + state);
+//        System.out.println("ExampleHealthIndicator called at " + LocalDateTime.now() + " state=" + state);
         if(state) {
             return Health.up().build();
         } else {

@@ -14,11 +14,11 @@ RUN mkdir /app \
 
 # in this stage we produce the three layer boot image
 FROM adoptopenjdk:11-jre-hotspot
-VOLUME /tmp
-WORKDIR /app
 COPY --from=exploded /app/BOOT-INF/lib /app/lib
 COPY --from=exploded /app/META-INF /app/META-INF
 COPY --from=exploded /app/BOOT-INF/classes /app
+VOLUME /tmp
+WORKDIR /app
 EXPOSE 8080
 USER nobody:nobody
 ENTRYPOINT ["java","-XshowSettings:vm","-XX:MaxRAMPercentage=75.0","-cp","/app:/app/lib/*","com.example.messageservice.MessageServiceApplication"]
