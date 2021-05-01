@@ -46,7 +46,8 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <image>
-                        <publish>true</publish>
+<!--                        <name>asaikali/${project.artifactId}</name>-->
+<!--                        <publish>true</publish>-->
                     </image>
                 </configuration>
             </plugin>
