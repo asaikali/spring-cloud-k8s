@@ -44,11 +44,11 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-<!--                <configuration>-->
-<!--                    <image>-->
-<!--                        <publish>true</publish>-->
-<!--                    </image>-->
-<!--                </configuration>-->
+                <configuration>
+                    <image>
+                        <publish>true</publish>
+                    </image>
+                </configuration>
             </plugin>
         </plugins>
     </build>
