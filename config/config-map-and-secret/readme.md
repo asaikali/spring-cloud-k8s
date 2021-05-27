@@ -61,7 +61,9 @@ data:
     <artifactId>spring-cloud-starter-kubernetes-client-config</artifactId>
 </dependency>
 ```
-* inspect the `application.yml` 
+* inspect the `application.yml` and notice that the spring cloud k8s is being configured to watch for changes 
+  on the tree config map called message-service 
+  
 
 **Configuration Tree**
 
