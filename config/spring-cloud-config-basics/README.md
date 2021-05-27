@@ -13,13 +13,17 @@ configuration, and the greeter app uses the Spring Boot 2.3 approach by turning 
 
 ### Run the Demo
 
-* Fork https://github.com/practical-microservices/spring-cloud-config-basics-repo.git into your own Git repo on GitHub
+* Fork [https://github.com/practical-microservices/spring-cloud-config-basics-repo.git](https://github.com/practical-microservices/spring-cloud-config-basics-repo.git) into your own Git repo on GitHub
 * Import the root of the repo into your favorite Java IDE
 * Edit to `config-server\src\main\resources\application.yml` to point to your fork from step 1
 * Run config-server application
 * Run `billboard` application
+* visit `http://127.0.0.1:8082/actuator/env` to see how the application is getting its setting
+* visit `http://localhost:8888/billboard/master` to see the settings for configuring billboard app
 * Run `greeter` application
- 
+* visit `http://127.0.0.1:8080/actuator/env` to see how the application is getting its setting
+* visit `http://localhost:8880/billboard/master` to see the settings for configuring greeter app
+* visit `http://localhost:8880/billboard/actuator/health` to see the settings for configuring greeter app
 
 ### Things to try out 
 * Access each application and check how the message is mapping to configuration value associated with every app. Examine the config repo to see how the mapping works. Notice that the name of the yml file matches the application name configured under `spring.application.name`

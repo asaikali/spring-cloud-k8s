@@ -11,12 +11,3 @@ spring:
       # make app startup fail if it can't connect to config server rather than start
       # with no configs
       fail-fast: false
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-  endpoint:
-    health:
-      show-details: always
