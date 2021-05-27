@@ -12,17 +12,17 @@ import java.util.Map;
 @RefreshScope
 public class ConfigDetailsController {
 
-    private String messego;
+    private String message;
 
 
-    public ConfigDetailsController(@Value("${message:hardcoded default value}") String messego) {
-        this.messego = messego;
+    public ConfigDetailsController(@Value("${message:hardcoded default value}") String message) {
+        this.message = message;
     }
 
     @GetMapping("/")
     public Map<String,Object> get() {
         return Map.of("date", LocalDateTime.now(),
-                "message", messego);
+                "message", message);
     }
 
 }

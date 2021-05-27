@@ -10,7 +10,7 @@ metadata:
   name: message-service
   namespace: config-examples
 data:
-  message: "Value from K8s config updated"
+  message: "Value from K8s config"
 
 ---
 apiVersion: apps/v1

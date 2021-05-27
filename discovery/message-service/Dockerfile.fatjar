@@ -1,7 +1,0 @@
-
-FROM adoptopenjdk:11-jre-hotspot
-COPY target/message-service-0.0.1-SNAPSHOT.jar /app.jar
-VOLUME /tmp
-EXPOSE 8080
-USER nobody:nobody
-ENTRYPOINT ["java","-XshowSettings:vm","-XX:MaxRAMPercentage=75.0","-jar","/app.jar]
