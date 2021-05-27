@@ -13,6 +13,16 @@ data:
   message: "Value from K8s config"
 
 ---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: demo-configmap
+  namespace: config-examples
+data:
+  foo: "foo value"
+  bar: "bar value"
+
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -28,10 +38,17 @@ spec:
       labels:
         app: message-service
     spec:
+      volumes:
+        - name: demo-config-volume
+          configMap:
+            name: demo-configmap
       # serviceAccountName: "spring-cloud"
       containers:
       - image: "config-map-and-secret:0.0.1-SNAPSHOT"
         imagePullPolicy: IfNotPresent
+        volumeMounts:
+          - mountPath: /myconfigs
+            name: demo-config-volume
         name: message-service
         ports:
           - containerPort: 8080

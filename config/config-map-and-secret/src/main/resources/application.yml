@@ -1,0 +1,15 @@
+spring:
+  config:
+    import: "optional:configtree:/myconfigs/" #app pulls properties form files in this folder, files put there based
+   # on k8s config map vaules
+
+  cloud:
+    kubernetes:
+      reload:
+        enabled: true
+      config:
+        name: message-service
+        namespace: config-examples
+        sources:
+          # Spring Cloud Kubernetes looks up a ConfigMap named message-service in namespace config-examples
+          - name: message-service

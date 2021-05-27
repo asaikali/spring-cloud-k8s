@@ -61,3 +61,25 @@ data:
     <artifactId>spring-cloud-starter-kubernetes-client-config</artifactId>
 </dependency>
 ```
+* inspect the `application.yml` 
+
+**Configuration Tree**
+
+
+* inspect `TreeController` class notice that it reads two property values
+* inspect `k8s/config-example.yml` file notice the config map and how it is mounted into the container
+* launch octant with `octant` command then visit `localhost:7777" with your browser
+* In octant find the pod and pull up a terminal then navigate into `/myconfigs` and see the contents of the file
+* inspect the `application.yml` file notice the `import: "optional:configtree:/myconfigs/` which reads the contents of
+  the `/myconfigs` as individual properties
+* visit the http endpoint `/tree` on the exposed node port for example `curl http://localhost:32765/tree/` you will
+  see the property values from the kubernetes config map that were converted in spring boot properties as shown below
+ ```json
+{
+"bar": "bar value",
+"foo": "foo value"
+}
+```
+* change the bar and foo values in the config map and apply the changes to k8s, you will notice that there end point 
+ does not update because the `TreeController` bean does not have the `@RefreshScope` on it.
+  
