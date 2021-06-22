@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: message-service
   config:
     import: "optional:configtree:/myconfigs/" #app pulls properties form files in this folder, files put there based
    # on k8s config map vaules

@@ -3,4 +3,4 @@ spring:
     # name of the application that is used to identify the app to the config server
     name: billboard
   config:
-    import: "configserver:http://localhost:8888" # only works in boot 2.4 or later
+    import: "optional:configserver:http://localhost:8888" # only works in boot 2.4 or later
