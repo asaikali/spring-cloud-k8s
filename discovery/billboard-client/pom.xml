@@ -9,11 +9,10 @@
     <packaging>jar</packaging>
 
     <name>billboard-client</name>
-    <description>Demo Java Project Showing How to use Eureka</description>
 
     <parent>
         <groupId>com.example</groupId>
-        <artifactId>spring-cloud-k8s</artifactId>
+        <artifactId>discovery</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
@@ -40,7 +39,7 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-kubernetes-all</artifactId>
+            <artifactId>spring-cloud-starter-kubernetes-client</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -48,18 +47,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <build>
         <plugins>
@@ -69,6 +56,4 @@
             </plugin>
         </plugins>
     </build>
-
-
 </project>

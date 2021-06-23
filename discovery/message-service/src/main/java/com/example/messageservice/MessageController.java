@@ -20,8 +20,6 @@ public class MessageController {
         this.quoteRepository = quoteRepository;
     }
 
-
-
     @GetMapping("/")
     public Quote radomQuote()
     {

@@ -1,7 +1,6 @@
 spring:
-  cloud:
-    kubernetes:
-      enabled: false
+  application:
+    name: billboard-java-client
 
 eureka:
   client:

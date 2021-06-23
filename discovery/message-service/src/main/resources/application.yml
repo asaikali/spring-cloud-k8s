@@ -1,9 +1,6 @@
-foo: "value from application.yml"
-
 spring:
-  cloud:
-    kubernetes:
-      enabled: false
+  application:
+    name: message-service
 
 # Set this service to start on a random port number that is not being
 # used, this will allow us to launch multiple versions of the service
