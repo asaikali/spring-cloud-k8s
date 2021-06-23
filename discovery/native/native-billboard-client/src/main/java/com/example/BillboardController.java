@@ -10,6 +10,7 @@ import org.springframework.web.client.RestTemplate;
 public class BillboardController {
 
     @Autowired
+    @LoadBalanced
     private RestTemplate restTemplate;
 
     @GetMapping("/message")

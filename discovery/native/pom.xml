@@ -21,8 +21,8 @@
   </properties>
 
   <modules>
-    <module>message-service</module>
-    <module>billboard-client</module>
+    <module>native-message-service</module>
+    <module>native-billboard-client</module>
   </modules>
 
   <dependencyManagement>
