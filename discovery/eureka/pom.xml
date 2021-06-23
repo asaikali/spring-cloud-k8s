@@ -10,9 +10,8 @@
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
   <groupId>com.example</groupId>
-  <artifactId>discovery</artifactId>
+  <artifactId>eureka</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>spring-cloud-k8s</name>
   <packaging>pom</packaging>
   <description>Demo Project showing Spring cloud Integration with Kubernetes</description>
 
@@ -22,9 +21,9 @@
   </properties>
 
   <modules>
-    <module>message-service</module>
+    <module>eureka-message-service</module>
     <module>eureka-server</module>
-    <module>billboard-client</module>
+    <module>eureka-billboard-client</module>
   </modules>
 
   <dependencyManagement>

@@ -2,6 +2,7 @@
 server:
   port: 8761
 
+
 eureka:
   client:
     register-with-eureka: false
@@ -10,3 +11,10 @@ eureka:
   # running eureka across availability zones and regions
   datacenter: laptop
   environment: dev
+
+spring:
+  cloud:
+    kubernetes:
+      reload:
+        enabled: false
+        strategy: restart_context

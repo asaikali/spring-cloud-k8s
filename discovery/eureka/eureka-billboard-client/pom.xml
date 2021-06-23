@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>billboard-client</artifactId>
+    <artifactId>eureka-billboard-client</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
@@ -12,7 +12,7 @@
 
     <parent>
         <groupId>com.example</groupId>
-        <artifactId>discovery</artifactId>
+        <artifactId>eureka</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
@@ -36,10 +36,6 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-kubernetes-client</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
