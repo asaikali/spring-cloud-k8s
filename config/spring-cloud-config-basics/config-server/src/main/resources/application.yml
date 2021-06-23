@@ -18,3 +18,5 @@ management:
   endpoint:
     health:
       show-details: always
+      probes:
+        enabled: true  # on K8s this is turned on by default
