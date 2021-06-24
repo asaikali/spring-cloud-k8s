@@ -2,7 +2,10 @@
 
 ### Overview
 
-This sample shows off how to use Spring Cloud Eureka for service discovery between microservices. In this sample it will be shown how `message-service` registers itself inside eureka, while `billboard-client` is able to resolve the endpoint for `message-service` from the eureka registry by looking it up by it's service name.
+This sample shows off how to use Spring Cloud Eureka for service discovery between 
+microservices. In this sample it will be shown how `message-service` registers itself inside 
+eureka, while `billboard-client` is able to resolve the endpoint for `message-service` from the 
+eureka registry by looking it up by its service name.
 
 ### Run the Demo
 

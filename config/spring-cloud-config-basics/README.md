@@ -32,12 +32,6 @@ configuration, and the greeter app uses the Spring Boot 2.3 approach by turning 
 
 ### Deploy to Kubernetes
 
-*Validate env* 
-* Make sure docker desktop is running on your machine with k8s service running. If you are using a remote k8s cluster
-   you will need to adapt the instructions to publish images to a registry accessible from your cluster. 
-* Install the [kustomize cli](https://kustomize.io/) if you don't have it installed
-
-*Deploy the app*
 * build the container images locally using spring boot plugin `./mvnw clean spring-boot:build-image`.
 * deploy the app `kustomize build . | kubectl apply -f -`
 * check contents of the config-server namespace `kc get all -n config-server` you will see the node ports of all the 
