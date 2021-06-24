@@ -21,5 +21,6 @@ spring:
   config:
     activate:
       on-profile: "!kubernetes"
+
 server:
   port: 8081

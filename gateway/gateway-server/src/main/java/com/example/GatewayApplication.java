@@ -7,7 +7,7 @@ import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
-@EnableDiscoveryClient
+// @EnableDiscoveryClient no longer required keeping this comment to point that it is no longer needed
 @SpringBootApplication
 public class GatewayApplication {
 
