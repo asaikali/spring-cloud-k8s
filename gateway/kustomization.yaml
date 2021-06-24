@@ -9,4 +9,5 @@ resources:
   - namespace.yaml
   - gateway-message-service/k8s/message-service.yaml
   - gateway-billboard-client/k8s/billboard-client.yaml
+  - gateway-server/k8s/gateway-server.yaml
 

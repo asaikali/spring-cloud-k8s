@@ -7,9 +7,11 @@ import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
+@EnableDiscoveryClient
 @SpringBootApplication
-public class BillboardClientApplication {
+public class GatewayApplication {
+
     public static void main(String[] args) {
-        SpringApplication.run(BillboardClientApplication.class, args);
+        SpringApplication.run(GatewayApplication.class, args);
     }
 }

@@ -23,6 +23,7 @@
   <modules>
     <module>gateway-message-service</module>
     <module>gateway-billboard-client</module>
+    <module>gateway-server</module>
   </modules>
 
   <dependencyManagement>

@@ -21,7 +21,13 @@ public class MessageController {
     }
 
     @GetMapping("/")
-    public Quote radomQuote()
+    public Quote root()
+    {
+        return quoteRepository.findRandomQuote();
+    }
+
+    @GetMapping("/random-quote")
+    public Quote randomQuote()
     {
         return quoteRepository.findRandomQuote();
     }

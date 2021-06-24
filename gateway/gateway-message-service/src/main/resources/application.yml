@@ -2,9 +2,6 @@ spring:
   application:
     name: message-service
 
-server:
-  port: 8081
-
 # expose all the spring boot actuators good for demos.
 # NEVER DO THIS in production
 management:
@@ -17,3 +14,12 @@ management:
 #      enabled: true # needed for spring cloud k8s so it can restart app when property values changes
     health:
       show-details: always
+
+---
+# configure here is only active when running outside of k8s
+spring:
+  config:
+    activate:
+      on-profile: "!kubernetes"
+server:
+  port: 8081
