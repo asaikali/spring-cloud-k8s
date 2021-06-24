@@ -27,6 +27,17 @@ management:
       show-details: always
 server:
   port: 9090
+
+---
+# configure here is only active when running inside of k8s
+spring:
+  config:
+    activate:
+      on-profile: "kubernetes"
+  cloud:
+    kubernetes:
+      discovery:
+        all-namespaces: true
 ---
 # configure here is only active when running outside of k8s
 spring:
