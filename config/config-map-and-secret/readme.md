@@ -42,7 +42,8 @@ metadata:
 data:
   message: "Value from K8s config updated"
 ```
-* execute `kubectl apply -f k8s` to change the value of the config map 
+* execute `kubectl apply -f k8s` to change the value of the config map
+* Hit actuator refresh endpoint: `curl localhost:49670/actuator/refresh -d {} -H "Content-Type: application/json"`
 * reload the page `http://localhost:30165/` and you see that the message element of the json response matches the 
   value from the config map. Spring Cloud for k8s was able to detect the change and reload the value when it was 
   changed because the `com.example.ConfigDetailsController` was marked with `@RefreshScope` which cause spring cloud
@@ -71,7 +72,7 @@ data:
 * inspect `TreeController` class notice that it reads two property values
 * inspect `k8s/config-example.yml` file notice the config map and how it is mounted into the container
 * launch octant with `octant` command then visit `localhost:7777" with your browser
-* In octant find the pod and pull up a terminal then navigate into `/myconfigs` and see the contents of the file
+* In octant find the pod and pull up a terminal then navigate into `/myconfigs` and see the contents of the file (`kubectl exec --stdin --tty message-service-6fbb95bc88-g2m26 -- /bin/bash`)
 * inspect the `application.yml` file notice the `import: "optional:configtree:/myconfigs/` which reads the contents of
   the `/myconfigs` as individual properties
 * visit the http endpoint `/tree` on the exposed node port for example `curl http://localhost:32765/tree/` you will
