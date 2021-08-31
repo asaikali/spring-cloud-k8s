@@ -1,3 +1,10 @@
+#logging:
+#  level:
+#    org:
+#      springframework:
+#        cloud:
+#          kubernetes: DEBUG
+
 spring:
   application:
     name: message-service
@@ -9,6 +16,7 @@ spring:
     kubernetes:
       reload:
         enabled: true
+        strategy: restart_context
       config:
         name: message-service
         namespace: config-examples
@@ -24,5 +32,7 @@ management:
       exposure:
         include: "*"
   endpoint:
+    restart:
+      enabled: true
     health:
       show-details: always
