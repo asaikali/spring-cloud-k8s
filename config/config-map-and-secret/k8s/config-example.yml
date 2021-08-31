@@ -42,9 +42,9 @@ spec:
         - name: demo-config-volume
           configMap:
             name: demo-configmap
-      # serviceAccountName: "spring-cloud"
+#      serviceAccountName: "message-service"
       containers:
-      - image: "config-map-and-secret:0.0.1-SNAPSHOT"
+      - image: "harbor.tanzu.be/library/config-map-and-secret:0.0.1-SNAPSHOT"
         imagePullPolicy: IfNotPresent
         volumeMounts:
           - mountPath: /myconfigs
@@ -85,5 +85,38 @@ spec:
     app: message-service
   type: NodePort
 
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  labels:
+    app: message-service
+  name: message-service
+  namespace: config-examples
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  labels:
+    app: message-service
+  name: message-service:view
+  namespace: config-examples
+roleRef:
+  kind: Role
+  apiGroup: rbac.authorization.k8s.io
+  name: namespace-reader
+subjects:
+  - kind: ServiceAccount
+    name: message-service
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: namespace-reader
+  namespace: config-examples
+rules:
+  - apiGroups: ["", "extensions", "apps"]
+    resources: ["configmaps", "pods", "services", "endpoints", "secrets"]
+    verbs: ["get", "list", "watch"]
 
 
