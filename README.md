@@ -15,7 +15,7 @@ You will need the following installed on your laptop to try out the samples in t
 * [Java 11 JDK](https://adoptopenjdk.net/)
 * Favourite Java IDE [Eclipse Spring Tool Suite](https://spring.io/tools) or [IntelliJ](https://www.jetbrains.com/idea/download)
 * [Docker](https://www.docker.com/products/docker-desktop)
-* [Octant](https://github.com/vmware-tanzu/octant#installation)]
+* [Octant](https://github.com/vmware-tanzu/octant#installation)
 * [kustomize](https://kustomize.io/) 
 * [Kubernetes](https://kubernetes.io/) sample tested with Docker Desktop K8s. If you have a different k8s install you must know how to expose the app in k8s to your machine  if you don't just use docker desktop k8s to run these demos.
 

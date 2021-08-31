@@ -10,7 +10,7 @@ metadata:
   name: message-service
   namespace: config-examples
 data:
-  message: "Value from K8s config update"
+  message: "Value from K8s config"
 
 ---
 apiVersion: v1
@@ -42,7 +42,7 @@ spec:
         - name: demo-config-volume
           configMap:
             name: demo-configmap
-      # serviceAccountName: "spring-cloud"
+      serviceAccountName: "message-service"
       containers:
       - image: "config-map-and-secret:0.0.1-SNAPSHOT"
         imagePullPolicy: IfNotPresent

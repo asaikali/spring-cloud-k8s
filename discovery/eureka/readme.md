@@ -25,8 +25,8 @@ eureka registry by looking it up by its service name.
 
 * build the container images locally using spring boot plugin `./mvnw clean spring-boot:build-image`.
 * deploy the app `kustomize build . | kubectl apply -f -`
-* check contents of the config-server namespace `kc get all -n config-server` you will see the node ports of all the
-  services for the greeter, billboard, and config server. Output should be similar to the one below.
+* check contents of the eureka namespace `k get all -n eureka` you will see the node ports of all the
+  services for the greeter, billboard, and eureka. Output should be similar to the one below.
 
 ### Resources to Learn More:
 * https://cloud.spring.io/spring-cloud-netflix/
