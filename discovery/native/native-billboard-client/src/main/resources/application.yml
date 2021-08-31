@@ -18,7 +18,7 @@ management:
 spring:
   config:
     activate:
-      on-profile:  "!kuberentes"
+      on-profile:  "!kubernetes"
   cloud:
     discovery:
       client:
