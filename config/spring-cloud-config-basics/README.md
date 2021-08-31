@@ -30,6 +30,10 @@ configuration, and the greeter app uses the Spring Boot 2.3 approach by turning 
 * Change the Spring profile of billboard application to `dev` and see how the message is affected - the new values is coming out of configuration file `billboard-dev.yml`
 * Access the `/health` endpoint of each app. Notice how the configuration defined in `application.yml` applies to both applications.
 
+### Configure minikube 
+
+* execute the command `eval $(minikube -p minikube docker-env)` if you are using minikube instead of docker desktop
+ 
 ### Deploy to Kubernetes
 
 * build the container images locally using spring boot plugin `./mvnw clean spring-boot:build-image`.
@@ -62,11 +66,48 @@ replicaset.apps/config-server-68458bdd86   1         1         1       5h37m
 replicaset.apps/greeter-6f876888c9         1         1         1       5h7m
 
 ```
+
+#### Docker Desktop
+
 * Take note of the node port of the config-server and go to `http://localhost:replace-with-node-port-number/billboard/master`
 * visit the node port of the billboard and config services you will see the same behaviour you saw when you ran the samples
   on your laptop.
-* inspect the yaml files for the deployment open the `kustomization.yaml` and inspect the various yaml deployments, 
-  notice how the deployment manifest sets the environment variables. 
+* inspect the yaml files for the deployment open the `kustomization.yaml` and inspect the various yaml deployments,
+    notice how the deployment manifest sets the environment variables.
+  
+#### Minikube 
+* Execute the command `minikube service list` you should see output below 
+
+```
+|---------------|---------------|--------------|-----|
+|   NAMESPACE   |     NAME      | TARGET PORT  | URL |
+|---------------|---------------|--------------|-----|
+| config-server | billboard     |         8080 |     |
+| config-server | config-server |         8888 |     |
+| config-server | greeter       |         8080 |     |
+| default       | kubernetes    | No node port |
+| kube-system   | kube-dns      | No node port |
+|---------------|---------------|--------------|-----|
+```
+
+* Execute the command `minikube service --url billboard -n config-server` to get a proxy accessible from 
+ the host machine to the service running on minikube, you will see output similar to the one below
+  
+```
+minikube service --url billboard -n config-server
+🏃  Starting tunnel for service billboard.
+|---------------|-----------|-------------|------------------------|
+|   NAMESPACE   |   NAME    | TARGET PORT |          URL           |
+|---------------|-----------|-------------|------------------------|
+| config-server | billboard |             | http://127.0.0.1:60161 |
+|---------------|-----------|-------------|------------------------|
+http://127.0.0.1:60161
+❗  Because you are using a Docker driver on darwin, the terminal needs to be open to run it.
+```
+
+* inspect the yaml files for the deployment open the `kustomization.yaml` and inspect the various yaml deployments,
+  notice how the deployment manifest sets the environment variables.
+
   
 ### Resources to Learn More:
 * https://cloud.spring.io/spring-cloud-config/
