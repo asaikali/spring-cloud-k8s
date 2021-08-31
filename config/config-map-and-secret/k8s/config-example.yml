@@ -42,7 +42,7 @@ spec:
         - name: demo-config-volume
           configMap:
             name: demo-configmap
-#      serviceAccountName: "message-service"
+      serviceAccountName: "message-service"
       containers:
       - image: "config-map-and-secret:0.0.1-SNAPSHOT"
         imagePullPolicy: IfNotPresent
